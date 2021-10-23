@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import {React, useState} from "react";
+import { GlobalStyle } from "./GlobalStyle";
+
+import SearchBar from "./SearchBar";
+
+import API from "./API";
+import Header from "./Header";
+import { useFetchUser } from "./Hooks/useFetchUser";
 
 function App() {
+  const {state, searchTerm, setSearchTerm, error, loading} = useFetchUser();
+
+  if(error){
+    return <div>Something went wrong...</div>
+  }
+
+  console.log(state);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Header/>
+    <SearchBar/>
+    <GlobalStyle />
     </div>
   );
 }
