@@ -1,10 +1,12 @@
 import {React, useState} from "react";
 import { GlobalStyle } from "./GlobalStyle";
 
-import SearchBar from "./SearchBar";
-
-import API from "./API";
-import Header from "./Header";
+// components
+import SearchBar from "./Components/SearchBar";
+import Header from "./Components/Header";
+import UserInfo from "./Components/UserInfo";
+import Spinner from "./Components/Spinner";
+// hooks
 import { useFetchUser } from "./Hooks/useFetchUser";
 
 function App() {
@@ -13,14 +15,17 @@ function App() {
   if(error){
     return <div>Something went wrong...</div>
   }
+  
 
-  console.log(state);
+  console.log(state)
+
 
 
   return (
     <div className="App">
     <Header/>
-    <SearchBar/>
+    <SearchBar setSearchTerm={setSearchTerm}/>
+    { loading ? <Spinner/> : <UserInfo user={state}/> }
     <GlobalStyle />
     </div>
   );
