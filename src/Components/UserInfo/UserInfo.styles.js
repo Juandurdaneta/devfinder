@@ -5,15 +5,17 @@ export const Wrapper = styled.div`
     border-radius: 15px;
     display: flex;
     background: var(--lightBlue);
-    padding: 25px 5px 25px 15px;
+    padding: 35px 5px 25px 15px;
     width: 100%;
     box-shadow: 1px 3px 2px 1px #101625;
 
 
 
 `
+
+
 export const Content = styled.div`
-        margin-left: 10rem;
+
 
         h2, p{
             display: inline;
@@ -24,5 +26,12 @@ export const Content = styled.div`
             font-size: .9rem;
         }
 
+        img{
+            width: 120px;
+            border-radius: 60px;
+            float: left;
+            margin: auto 40px auto 30px;
+        }
+        
 
 `

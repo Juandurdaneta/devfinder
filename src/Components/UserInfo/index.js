@@ -1,5 +1,5 @@
 import React from "react";
-import { Content } from "../UserInfo/UserInfo.styles";
+import { Content, ProfilePic } from "../UserInfo/UserInfo.styles";
 
 // styles
 import { Wrapper } from "../UserInfo/UserInfo.styles";
@@ -16,8 +16,10 @@ const UserInfo = ({ user }) => {
   return (
     <Wrapper>
       <Content>
-        <h2>{user.name}</h2>
+        <img src={user.avatar_url} />
+        {user.name ?<h2> {user.name} </h2> : <h2>null</h2>}
         <p>Joined {date}</p>
+        
       </Content>
     </Wrapper>
   );

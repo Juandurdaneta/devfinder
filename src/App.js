@@ -25,7 +25,7 @@ function App() {
     <div className="App">
     <Header/>
     <SearchBar setSearchTerm={setSearchTerm}/>
-    { loading ? <Spinner/> : <UserInfo user={state}/> }
+    { loading ? <Spinner/> : (state  ? <UserInfo user={state} /> : <h2>Could not find that user...</h2>) }
     <GlobalStyle />
     </div>
   );
