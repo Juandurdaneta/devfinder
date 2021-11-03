@@ -1,5 +1,5 @@
 import React from "react";
-import { Content, Header } from "../UserInfo/UserInfo.styles";
+import { Content, Grid, Header, Item } from "../UserInfo/UserInfo.styles";
 
 // styles
 import { Wrapper } from "../UserInfo/UserInfo.styles";
@@ -22,6 +22,12 @@ const UserInfo = ({ user }) => {
         <p style={{color:"#1b79e4"}}>@{user.login}</p>
         {user.bio ? <p>{user.bio}</p> : <p>This profile has no bio.</p>}
 
+        <Grid>
+          <Item><p>Repos</p> <h4> {user.public_repos}</h4> </Item>
+          <Item><p>Followers</p> <h4> {user.followers}</h4> </Item>
+          <Item><p>Following</p> <h4> {user.following}</h4> </Item>
+
+        </Grid>
 
       </Content>
     </Wrapper>
