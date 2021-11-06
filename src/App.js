@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import {React} from "react";
 import { GlobalStyle } from "./GlobalStyle";
 
 // components
@@ -17,7 +17,6 @@ function App() {
   }
   
 
-  console.log(state)
 
 
 

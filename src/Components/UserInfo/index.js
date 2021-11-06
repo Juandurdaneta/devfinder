@@ -1,8 +1,15 @@
 import React from "react";
-import { Content, Grid, Header, Item } from "../UserInfo/UserInfo.styles";
+import { ContactGrid, Content, Grid, Header, Item, Contact} from "../UserInfo/UserInfo.styles";
 
 // styles
 import { Wrapper } from "../UserInfo/UserInfo.styles";
+// icon
+import LocationImg from "../../images/icon-location.svg";
+import TwitterImg from "../../images/icon-twitter.svg";
+import WebsiteImg from "../../images/icon-website.svg";
+import CompanyImg from "../../images/icon-company.svg";
+
+
 
 const UserInfo = ({ user }) => {
   const options = { day: "numeric", year: "numeric", month: "short" };
@@ -28,6 +35,21 @@ const UserInfo = ({ user }) => {
           <Item><p>Following</p> <h4> {user.following}</h4> </Item>
 
         </Grid>
+
+        <ContactGrid>
+          <Contact >
+            <img src={LocationImg} /> { user.location ? user.location :"Not available"}
+          </Contact>
+          <Contact >
+            <img src={TwitterImg} /> { user.twitter ? user.twitter :"Not available"}
+          </Contact>
+          <Contact >
+            <img src={WebsiteImg} /> { user.blog ? user.blog :"Not available"}
+          </Contact>
+          <Contact >
+            <img src={CompanyImg} /> { user.company ? user.company :"Not available"}
+          </Contact>
+        </ContactGrid>
 
       </Content>
     </Wrapper>

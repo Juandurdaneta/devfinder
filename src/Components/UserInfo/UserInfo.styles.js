@@ -12,6 +12,8 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
     width: 100%;
 
+    
+
 `;
 export const Header = styled.div`
 
@@ -62,4 +64,25 @@ export const Item = styled.div`
         margin-bottom: 10px;
       }
 
-`
+`;
+export const ContactGrid = styled.div`
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 0px 0px; 
+  width: 500px;
+  position: relative;
+  left: 190px;
+  margin-top: 2rem;
+`;
+
+export const Contact = styled.div`
+  padding: 5px;
+
+  img{
+    margin-right: .4rem;
+    color: white;
+  }
+  
+
+`;
